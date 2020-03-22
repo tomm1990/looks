@@ -25,12 +25,12 @@ html {
         border-radius: 2px; }
       .wrapper .main .content .text p {
         max-height: 100px;
-        transition: "max-height 1s ease-out";
+        transition: max-height 1s ease-out;
         overflow: hidden;
-        -moz-transition: "max-height 1s ease-out";
-        -ms-transition: "max-height 1s ease-out";
-        -o-transition: "max-height 1s ease-out";
-        -webkit-transition: "max-height 1s ease-out"; }
+        -moz-transition: max-height 1s ease-out;
+        -ms-transition: max-height 1s ease-out;
+        -o-transition: max-height 1s ease-out;
+        -webkit-transition: max-height 1s ease-out; }
       .wrapper .main .content .text span {
         display: block;
         text-align: center;

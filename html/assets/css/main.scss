@@ -3,8 +3,6 @@ $pal2 : #f5f5f5;
 
 $mobile : 800px;
 
-$transition : 'max-height 1s ease-out';
-
 *{
   margin : 0;
 }
@@ -38,12 +36,12 @@ html{
       .text{
         p{
           max-height: 100px;
-          transition: $transition;
+          transition: max-height 1s ease-out;
           overflow: hidden;
-          -moz-transition: $transition;
-          -ms-transition: $transition;
-          -o-transition: $transition;
-          -webkit-transition: $transition;
+          -moz-transition: max-height 1s ease-out;
+          -ms-transition: max-height 1s ease-out;
+          -o-transition: max-height 1s ease-out;
+          -webkit-transition: max-height 1s ease-out;
         }
         span{
           display: block;
