@@ -8,6 +8,19 @@ html(lang='en')
         title Loox
         meta(name='viewport' content='width=device-width, initial-scale=1')
         link(rel='stylesheet' type='text/css' href='/css/main.css')
+        script.
+            function func(span1) {
+                const parent = span1.parentNode,
+                    p = parent.childNodes[1],
+                    span = parent.childNodes[2];
+                if (p.clientHeight != 100) {
+                    p.style.maxHeight = '100px';
+                    span.innerHTML = 'Read More';
+                } else {
+                    p.style.maxHeight = '1000px';
+                    span.innerHTML = 'Read Less';
+                }
+            }
     body
         .wrapper
             //.header
@@ -18,14 +31,14 @@ html(lang='en')
                     .text
                         h4 #{animal.name}
                         p #{animal.text}
-                        span Read More
+                        span(onclick='func(this)') Read More
                 ol
                     each el in animals
                         li
-                            a(href='/dog/'+el.id)
+                            a(href='/dog/' + el.id)
                                 img(src=el.img)
                                 h4 #{el.name}
 
             //.footer
                 p footer
-        script(src='/js/main.js')
+        //script(src='/js/main.js')

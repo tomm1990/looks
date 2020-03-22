@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Looks</title>
+    <title>Loox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script>
+      function func(span1) {
+          const parent = span1.parentNode,
+              p = parent.childNodes[1],
+              span = parent.childNodes[2];
+          if (p.clientHeight != 100) {
+              p.style.maxHeight = '100px';
+              span.innerHTML = 'Read More';
+          } else {
+              p.style.maxHeight = '1000px';
+              span.innerHTML = 'Read Less';
+          }
+      }
+    </script>
   </head>
   <body>
-    <h4></h4>
     <div class="wrapper">
-      <div class="header">
-        <p>header</p>
-      </div>
-      <div class="main">
-        <div class="content"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Golden_Retriever_Carlos_%2810581910556%29.jpg">
-          <div class="text">
-            <h4>name1</h4>
-            <p>text1</p><span>READ MORE</span>
-          </div>
-        </div>
-        <ol>
-          <li><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Golden_Retriever_Carlos_%2810581910556%29.jpg">
-            <h4>name1</h4>
-          </li>
-        </ol>
-      </div>
-      <div class="footer">
-        <p>p © 2020 My Company</p>
-      </div>
+      <!--.headerp header
+      -->
+      <!--.main-->
+      <!--    .content-->
+      <!--        img(src=animal.img)-->
+      <!--        .text-->
+      <!--            h4 #{animal.name}-->
+      <!--            p #{animal.text}-->
+      <!--            span(onclick='func(this)') Read More-->
+      <!--    ol-->
+      <!--        each el in animals-->
+      <!--            li-->
+      <!--                a(href='/dog/' + el.id)-->
+      <!--                    img(src=el.img)-->
+      <!--                    h4 #{el.name}-->
+      <!--.footerp footer
+      -->
     </div>
+    <!--script(src='/js/main.js')-->
   </body>
 </html>

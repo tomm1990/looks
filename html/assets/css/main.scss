@@ -1,40 +1,50 @@
-$pal1 : #000;
-$pal2 : #f5f5f5;
+$pal1: #000;
+$pal2: #f5f5f5;
+$pal3 : #fff;
 
-$mobile : 800px;
+$mobile: 800px;
 
-*{
-  margin : 0;
+@mixin shadow1 {
+  box-shadow: 2px 2px 3px $pal1;
+  border-radius: 2px;
 }
 
-html{
+@mixin gr {
+  grid-template-columns: 1fr 2fr;
+  padding: 2%;
+  grid-gap: 2%;
+}
+
+* {
+  margin: 0;
+}
+
+html {
   background: $pal2;
   font-family: "Arial", sans-serif;
   letter-spacing: 0.00938em;
   text-decoration: none;
 }
 
-.wrapper{
+.wrapper {
   max-width: 1200px;
   margin: 0 auto;
 
-  .main{
+  .main {
     display: grid;
     grid-template-columns: auto 20%;
     grid-gap: 12px;
 
-    .content{
+    .content {
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      padding: 2%;
-      grid-gap: 2%;
-      img{
+      @include gr;
+
+      img {
         width: 100%;
-        box-shadow: 2px 2px 3px $pal1;
-        border-radius: 2px;
+        @include shadow1;
       }
-      .text{
-        p{
+      .text {
+        p {
           max-height: 100px;
           transition: max-height 1s ease-out;
           overflow: hidden;
@@ -43,34 +53,29 @@ html{
           -o-transition: max-height 1s ease-out;
           -webkit-transition: max-height 1s ease-out;
         }
-        span{
+        span {
           display: block;
           text-align: center;
-          box-shadow: 1px 2px 3px $pal1;
+          @include shadow1;
           padding: 2px;
-          border-radius: 2px;
-          background: #fff;
+          background: $pal3;
         }
       }
     }
 
-    ol{
+    ol {
       list-style: none;
       padding: 5%;
       li {
         a {
-          background: #fff;
+          background: $pal3;
           margin: 10px 0;
           display: grid;
-          grid-template-columns: 1fr 2fr;
-          grid-gap: 1%;
           align-items: center;
-
           text-decoration: none;
           color: $pal1;
-          box-shadow: 2px 2px 3px $pal1;
-          padding: 7px;
-          border-radius: 2px;
+          @include shadow1;
+          @include gr;
           img {
             width: 100%;
           }
@@ -81,10 +86,8 @@ html{
       }
     }
 
-    @media screen and (max-width: $mobile){
+    @media screen and (max-width: $mobile) {
       grid-template-columns: unset;
     }
-
   }
-
 }

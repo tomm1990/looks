@@ -1,14 +1,13 @@
 (()=>{
-    const span = document.querySelector('.text span');
+    const span = document.querySelector('.text span'),
+        growDiv = document.querySelector('.text p');
     span.addEventListener('click',event => {
-        var growDiv = document.querySelector('.text p');
-        console.log(growDiv.clientHeight);
         if (growDiv.clientHeight != 100 ) {
-            span.innerHTML = 'Read More';
             growDiv.style.maxHeight = '100px';
+            span.innerHTML = 'Read More';
         } else {
-            span.innerHTML = 'Read Less';
             growDiv.style.maxHeight = '1000px';
+            span.innerHTML = 'Read Less';
         }
     });
 })();
