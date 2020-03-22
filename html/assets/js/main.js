@@ -4,11 +4,11 @@
         var growDiv = document.querySelector('.text p');
         console.log(growDiv.clientHeight);
         if (growDiv.clientHeight != 100 ) {
+            span.innerHTML = 'Read More';
             growDiv.style.maxHeight = '100px';
-            growDiv.style.transition = 'max-height 0.25s ease-out;';
         } else {
+            span.innerHTML = 'Read Less';
             growDiv.style.maxHeight = '1000px';
-            growDiv.style.transition = 'max-height 0.25s ease-in';
         }
     });
 })();
