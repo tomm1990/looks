@@ -1,0 +1,30 @@
+-
+    const animals = data
+    const animal = dog
+
+doctype html
+html(lang='en')
+    head
+        title Looks
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        link(rel='stylesheet' type='text/css' href='/css/main.css')
+    body
+        .wrapper
+            .header
+                p header
+            .main
+                .content
+                    img(src=animal.img)
+                    .text
+                        h4 #{animal.name}
+                        p #{animal.text}
+                        span READ MORE
+                ol
+                    each el in animals
+                        li
+                            a(href='/dog/'+el.id)
+                                img(src=el.img)
+                                h4 #{el.name}
+
+            .footer
+                p footer
