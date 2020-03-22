@@ -1,6 +1,9 @@
 * {
   margin: 0; }
 
+html {
+  background: #CEE0DC; }
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -19,9 +22,13 @@
       .wrapper .main .content img {
         width: 100%; }
       .wrapper .main .content .text p {
-        height: 100px;
-        border: 1px solid red;
-        overflow: auto; }
+        max-height: 100px;
+        transition: max-height 0.25s ease-out;
+        overflow: hidden;
+        -moz-transition: max-height 0.25s ease-out;
+        -ms-transition: max-height 0.25s ease-out;
+        -o-transition: max-height 0.25s ease-out;
+        -webkit-transition: max-height 0.25s ease-out; }
       .wrapper .main .content .text span {
         border: 1px solid red;
         display: block;
