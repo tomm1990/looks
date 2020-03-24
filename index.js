@@ -3,8 +3,9 @@ const express = require('express'),
     data = require('./data.json'),
     port = process.env.PORT || 3000;
 
-app.use('/',express.static(`${__dirname}/html/views`));
+// app.use('/',express.static(`${__dirname}/html/views`));
 app.use(express.static(__dirname+'/html/assets'));
+app.set('/', __dirname + '/html/views');
 app.set('view engine', 'pug');
 
 app.use( (req,res,next) => {
@@ -13,7 +14,7 @@ app.use( (req,res,next) => {
     next();
 });
 
-app.get('/dog/:id', async (req,res)=>{
+app.get('/dog/:id', (req,res)=>{
    let id = req.params.id;
 
    let dog = data.data.filter((e,d)=>{
@@ -22,8 +23,12 @@ app.get('/dog/:id', async (req,res)=>{
    });
 
     res.render('index',{
-        dog : dog[0],
-        data : data.data
+        'd_name' : dog[0].name,
+        'd_txt' : dog[0].text,
+        'd_img' : dog[0].img,
+        'dog' : dog[0],
+        'data' : data.data,
+        'length' : data.data.length
     });
 });
 

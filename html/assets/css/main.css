@@ -32,12 +32,16 @@ html {
         -o-transition: max-height 1s ease-out;
         -webkit-transition: max-height 1s ease-out; }
       .wrapper .main .content .text span {
+        cursor: pointer;
         display: block;
         text-align: center;
         box-shadow: 2px 2px 3px #000;
         border-radius: 2px;
         padding: 2px;
-        background: #fff; }
+        background: #fff;
+        transition: 0.1s ease-in-out; }
+        .wrapper .main .content .text span:hover {
+          background: #f5f5f5; }
     .wrapper .main ol {
       list-style: none;
       padding: 5%; }
@@ -48,11 +52,14 @@ html {
         align-items: center;
         text-decoration: none;
         color: #000;
+        transition: 0.1s ease-in-out;
         box-shadow: 2px 2px 3px #000;
         border-radius: 2px;
         grid-template-columns: 1fr 2fr;
         padding: 2%;
         grid-gap: 2%; }
+        .wrapper .main ol li a:hover {
+          background: #f5f5f5; }
         .wrapper .main ol li a img {
           width: 100%; }
         .wrapper .main ol li a h4 {

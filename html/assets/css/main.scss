@@ -54,11 +54,17 @@ html {
           -webkit-transition: max-height 1s ease-out;
         }
         span {
+          cursor: pointer;
           display: block;
           text-align: center;
           @include shadow1;
           padding: 2px;
           background: $pal3;
+          transition: 0.1s ease-in-out;
+
+          &:hover{
+            background: $pal2;
+          }
         }
       }
     }
@@ -74,8 +80,12 @@ html {
           align-items: center;
           text-decoration: none;
           color: $pal1;
+          transition: 0.1s ease-in-out;
           @include shadow1;
           @include gr;
+          &:hover{
+            background: $pal2;
+          }
           img {
             width: 100%;
           }

@@ -1,7 +1,3 @@
--
-    const animals = data
-    const animal = dog
-
 doctype html
 html(lang='en')
     head
@@ -22,22 +18,29 @@ html(lang='en')
                 }
             }
     body
+        -
+            const animals = data
+            const animal = dog
+
         .wrapper
             //.header
                 p header
             .main
                 .content
-                    img(src=animal.img)
+                    //img(src=animal.img)
+                    img(src=d_img)
                     .text
-                        h4 #{animal.name}
-                        p #{animal.text}
+                        h4 #{d_name}
+                        p #{d_txt}
                         span(onclick='func(this)') Read More
                 ol
-                    each el in animals
-                        li
-                            a(href='/dog/' + el.id)
-                                img(src=el.img)
-                                h4 #{el.name}
+                    //each el in animals
+                    - for(var i = 0; i < length; i++) {
+                    li
+                        a(href='/dog/' + animals[i].id)
+                            img(src=animals[i].img)
+                            h4 #{animals[i].name}
+                    - }
 
             //.footer
                 p footer
