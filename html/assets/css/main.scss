@@ -39,6 +39,11 @@ html {
       display: grid;
       @include gr;
 
+      @media screen and (max-width: $mobile) {
+        grid-template-columns: unset;
+        padding: 5%;
+      }
+
       img {
         width: 100%;
         @include shadow1;

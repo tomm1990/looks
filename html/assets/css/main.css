@@ -19,6 +19,10 @@ html {
       grid-template-columns: 1fr 2fr;
       padding: 2%;
       grid-gap: 2%; }
+      @media screen and (max-width: 800px) {
+        .wrapper .main .content {
+          grid-template-columns: unset;
+          padding: 5%; } }
       .wrapper .main .content img {
         width: 100%;
         box-shadow: 2px 2px 3px #000;
