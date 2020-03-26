@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <script>
-      function func(span1) {
-          const parent = span1.parentNode,
+      var expand = (elm) => {
+          var parent = elm.parentNode,
               p = parent.childNodes[1],
               span = parent.childNodes[2];
-          if (p.clientHeight != 100) {
-              p.style.maxHeight = '100px';
-              span.innerHTML = 'Read More';
-          } else {
-              p.style.maxHeight = '1000px';
-              span.innerHTML = 'Read Less';
-          }
+          p.classList.toggle("show");
+          span.classList.toggle("show");
       }
     </script>
   </head>
@@ -28,7 +23,7 @@
           <!--img(src=animal.img)--><img>
           <div class="text">
             <h4></h4>
-            <p></p><span onclick="func(this)">Read More</span>
+            <p></p><span onclick="expand(this)"></span>
           </div>
         </div>
         <ol>

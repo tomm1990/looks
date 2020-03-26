@@ -31,6 +31,8 @@ html {
         -ms-transition: max-height 1s ease-out;
         -o-transition: max-height 1s ease-out;
         -webkit-transition: max-height 1s ease-out; }
+        .wrapper .main .content .text p.show {
+          max-height: 1000px; }
       .wrapper .main .content .text span {
         cursor: pointer;
         display: block;
@@ -42,6 +44,10 @@ html {
         transition: 0.1s ease-in-out; }
         .wrapper .main .content .text span:hover {
           background: #f5f5f5; }
+        .wrapper .main .content .text span:after {
+          content: "Read More"; }
+        .wrapper .main .content .text span.show:after {
+          content: "Read Less"; }
     .wrapper .main ol {
       list-style: none;
       padding: 5%; }

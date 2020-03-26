@@ -52,7 +52,12 @@ html {
           -ms-transition: max-height 1s ease-out;
           -o-transition: max-height 1s ease-out;
           -webkit-transition: max-height 1s ease-out;
+
+          &.show{
+            max-height: 1000px;
+          }
         }
+
         span {
           cursor: pointer;
           display: block;
@@ -64,6 +69,13 @@ html {
 
           &:hover{
             background: $pal2;
+          }
+
+          &:after{
+            content: "Read More";
+          }
+          &.show:after{
+            content: "Read Less";
           }
         }
       }
