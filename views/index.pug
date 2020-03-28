@@ -1,41 +1,14 @@
 doctype html
 html(lang='en')
-    head
-        title Loox
-        meta(name='viewport' content='width=device-width, initial-scale=1')
-        link(rel='stylesheet' type='text/css' href='/css/main.css')
-        script(src='/lib/glide/glide.min.js')
-
-        script.
-            var expand = (elm) => {
-                var parent = elm.parentNode,
-                    p = parent.childNodes[1],
-                    span = parent.childNodes[2];
-                p.classList.toggle("show");
-                span.classList.toggle("show");
-            }
+    include head.pug
     body
         .wrapper
             //.header
-                p header
-            .main
-                .content
-                    .glide
-                        .glide__track(data-glide-el="track")
-                            ul.glide__slides
-                                each carousel_img_item in arr_dog_images ? arr_dog_images : []
-                                    li.glide__slide
-                                        img(src=carousel_img_item.url loading="lazy" alt='Image of '+dog.name width=294)
-                    .text
-                        h4 #{dog?dog.name:''}
-                        p #{dog?dog.text:''}
-                        span(onclick='expand(this)')
-                ol
-                    each dog_item in dogs_list ? dogs_list : []
-                        li
-                            a(href='/dog/' + dog_item.id title=dog_item.name)
-                                img(src=dog_item.img loading="lazy" width=64 alt=dog.name)
-                                h4 #{dog_item.name}
-            //.footer
 
+            .main
+                include main/content.pug
+
+                include main/list.pug
+
+            //.footer
         script(src='/js/carousel.js')

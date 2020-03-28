@@ -1,0 +1,11 @@
+.content
+    .glide
+        .glide__track(data-glide-el="track")
+            ul.glide__slides
+                each carousel_img_item in arr_dog_images ? arr_dog_images : []
+                    li.glide__slide
+                        img(src=carousel_img_item.url loading="lazy" alt='Image of '+dog.name width=294)
+    .text
+        h4 #{dog?dog.name:''}
+        p #{dog?dog.text:''}
+        span(onclick='expand(this)')

@@ -14,6 +14,8 @@ app.use(express.static(__dirname + '/html/assets',{
 app.set('/', __dirname + '/html/views');
 app.set('view engine', 'pug');
 
+// TODO : Must serve on HTTP/2 or HTTP/3 with SSL
+
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
