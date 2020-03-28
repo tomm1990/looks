@@ -8,8 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "build": "babel html/assets/js -d lib"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
