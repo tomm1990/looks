@@ -25,22 +25,17 @@ html(lang='en')
                             ul.glide__slides
                                 each carousel_img_item in arr_dog_images ? arr_dog_images : []
                                     li.glide__slide
-                                        img(src=carousel_img_item.url loading="lazy")
-
-                        //.glide__arrows(data-glide-el="controls")
-                            button(class="glide__arrow glide__arrow--left" data-glide-dir="<") prev
-                            button(class="glide__arrow glide__arrow--right" data-glide-dir=">") next
+                                        img(src=carousel_img_item.url loading="lazy" width=294)
                     .text
                         h4 #{dog?dog.name:''}
                         p #{dog?dog.text:''}
                         span(onclick='expand(this)')
                 ol
-                    each el in dogs_list ? dogs_list : []
+                    each dog_item in dogs_list ? dogs_list : []
                         li
-                            a(href='/dog/' + el.id  )
-                                img(src=el.img)
-                                h4 #{el.name}
+                            a(href='/dog/' + dog_item.id title=dog_item.name)
+                                img(src=dog_item.img loading="lazy" width=64)
+                                h4 #{dog_item.name}
             //.footer
 
-        //script(src='/js/main.js')
         script(src='/js/carousel.js')

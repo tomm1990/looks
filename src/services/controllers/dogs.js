@@ -1,19 +1,14 @@
 const axios = require('axios');
 
-
-exports.getImages = async (id)=>{
-    // console.log(`dog -> getImage() `);
-    // console.log(`id -> ${id}`);
-
+exports.getImages = async(id) => {
     try {
         return await axios.get(
-        // await axios.get(
-            'https://api.thedogapi.com/v1/images/search',{
+            'https://api.thedogapi.com/v1/images/search', {
                 headers: {
-                    'x-api-key':'26b41856-8ad0-4274-8089-bfc136b06fb7',
-                    'Content-Type' : 'application/json'
+                    'x-api-key': "26b41856-8ad0-4274-8089-bfc136b06fb",
+                    'Content-Type': 'application/json'
                 },
-                params : {
+                params: {
                     order: 'RANDOM',
                     has_breeds: true,
                     size: 'med',
@@ -24,9 +19,7 @@ exports.getImages = async (id)=>{
                     breed_id: id
                 }
             });
-
     } catch (error) {
         console.error(error)
     }
 };
-
