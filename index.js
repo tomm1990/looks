@@ -8,7 +8,9 @@ const express = require('express'),
 
 const dogs_list = data.data;
 
-app.use(express.static(__dirname + '/html/assets'));
+app.use(express.static(__dirname + '/html/assets',{
+    maxAge: "1h"
+}),);
 app.set('/', __dirname + '/html/views');
 app.set('view engine', 'pug');
 
@@ -35,6 +37,11 @@ app.get('/dog/:id', async (req, res) => {
         dogs_list : dogs_list,
         arr_dog_images : arr_dog_images,
     });
+});
+
+app.get('/robots.txt', function (req, res) {
+    res.type('text/plain');
+    res.send("User-agent: *\nDisallow: /");
 });
 
 app.get('*', (req, res) => {

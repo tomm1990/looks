@@ -25,7 +25,7 @@ html(lang='en')
                             ul.glide__slides
                                 each carousel_img_item in arr_dog_images ? arr_dog_images : []
                                     li.glide__slide
-                                        img(src=carousel_img_item.url loading="lazy" width=294)
+                                        img(src=carousel_img_item.url loading="lazy" alt='Image of '+dog.name width=294)
                     .text
                         h4 #{dog?dog.name:''}
                         p #{dog?dog.text:''}
@@ -34,7 +34,7 @@ html(lang='en')
                     each dog_item in dogs_list ? dogs_list : []
                         li
                             a(href='/dog/' + dog_item.id title=dog_item.name)
-                                img(src=dog_item.img loading="lazy" width=64)
+                                img(src=dog_item.img loading="lazy" width=64 alt=dog.name)
                                 h4 #{dog_item.name}
             //.footer
 
