@@ -1,13 +1,16 @@
+"use strict";
+
 const express = require('express'),
     app = express(),
     data = require('./data.json'),
+    dogs_controller = require('./src/services/controllers/dogs'),
     port = process.env.PORT || 3000;
 
-// app.use('/',express.static(`${__dirname}/html/views`));
+const dogs_list = data.data;
+
 app.use(express.static(__dirname + '/html/assets'));
 app.set('/', __dirname + '/html/views');
 app.set('view engine', 'pug');
-
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -15,19 +18,22 @@ app.use((req, res, next) => {
     next();
 });
 
-
-
 app.get('/dog/:id', async (req, res) => {
     let id = req.params.id,
-        dog = await data.data.filter(e => e.id == id);
+        dog = await data.data.filter(e => e.id == id),
+        dog_images = await dogs_controller.getImages(id),
+        arr_dog_images = await dog_images.data.map((e,d)=>{
+        return {
+            url : e.url,
+            width : e.width,
+            height : e.height
+        };
+    });
 
     return res.render('index', {
-        'd_name': dog[0].name,
-        'd_txt': dog[0].text,
-        'd_img': dog[0].img,
-        'dog': JSON.stringify(dog[0]),
-        'data': data.data,
-        'length': data.data.length
+        dog : dog[0],
+        dogs_list : dogs_list,
+        arr_dog_images : arr_dog_images,
     });
 });
 

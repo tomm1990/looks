@@ -4,6 +4,7 @@
     <title>Loox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src="/lib/glide/glide.min.js"></script>
     <script>
       var expand = (elm) => {
           var parent = elm.parentNode,
@@ -16,24 +17,31 @@
   </head>
   <body>
     <div class="wrapper">
-      <!--h4 #{dog.img}-->
       <!--.headerp header
       -->
       <div class="main">
         <div class="content">
-          <!--img(src=animal.img)--><img>
+          <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+              </ul>
+            </div>
+            <!--.glide__arrows(data-glide-el="controls")
+            button(class="glide__arrow glide__arrow--left" data-glide-dir="<") prev
+            button(class="glide__arrow glide__arrow--right" data-glide-dir=">") next
+            -->
+          </div>
           <div class="text">
             <h4></h4>
             <p></p><span onclick="expand(this)"></span>
           </div>
         </div>
         <ol>
-          <!--each el in animals-->
         </ol>
       </div>
-      <!--.footerp footer
-      -->
+      <!--.footer-->
     </div>
     <!--script(src='/js/main.js')-->
+    <script src="/js/carousel.js"></script>
   </body>
 </html>
