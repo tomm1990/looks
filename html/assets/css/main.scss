@@ -1,12 +1,11 @@
 // Required Core Stylesheet
 @import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss";
-
 // Optional Theme Stylesheet
 @import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss";
 
 $pal1: #000;
 $pal2: #f5f5f5;
-$pal3 : #fff;
+$pal3: #fff;
 
 $mobile: 800px;
 
@@ -17,7 +16,7 @@ $mobile: 800px;
 
 @mixin gr {
   grid-template-columns: 1fr 2fr;
-  padding: 2%;
+  padding: 1vw;
   grid-gap: 2%;
 }
 
@@ -52,7 +51,7 @@ html {
         padding: 5%;
       }
 
-      .glide{
+      .glide {
         overflow: hidden;
         img {
           width: 98%;
@@ -75,7 +74,7 @@ html {
           -o-transition: max-height 1s ease-out;
           -webkit-transition: max-height 1s ease-out;
 
-          &.show{
+          &.show {
             max-height: 1000px;
           }
         }
@@ -89,14 +88,14 @@ html {
           background: $pal3;
           transition: 0.1s ease-in-out;
 
-          &:hover{
+          &:hover {
             background: $pal2;
           }
 
-          &:after{
+          &:after {
             content: "Read More";
           }
-          &.show:after{
+          &.show:after {
             content: "Read Less";
           }
         }
@@ -117,13 +116,13 @@ html {
           transition: 0.1s ease-in-out;
           @include shadow1;
           @include gr;
-          &:hover{
+          &:hover {
             background: $pal2;
           }
           img {
             width: 100%;
             object-fit: cover;
-            height: 60px;
+            //height: 60px;
           }
           h4 {
             padding: 5px;
@@ -137,9 +136,41 @@ html {
     }
   }
 
-  .footer{
+  .footer {
+    @import "loader";
+    padding: 1vw;
 
+    @media screen and (max-width: $mobile) {
+      padding: 5%;
+    }
+
+    h3 {
+      margin: 10px 5px;
+    }
+
+    table {
+      width: 100%;
+      border-bottom: 1px solid $pal1;
+      tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0.5%;
+        grid-gap: 2%;
+        td {
+          padding: 5px;
+        }
+      }
+
+      thead {
+        @include shadow1;
+        background: $pal3;
+      }
+      tbody {
+        display: block;
+        height: 100px;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+    }
   }
 }
-
-
